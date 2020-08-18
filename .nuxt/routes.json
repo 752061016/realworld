@@ -1,51 +1,51 @@
 [
   {
     "path": "/",
-    "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\layout\\\\index.vue",
+    "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\layout\\\\index.vue",
     "children": [
       {
         "path": "",
         "name": "home",
-        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\home",
-        "_name": "_2e1e2201"
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\home",
+        "_name": "_1f7d68d9"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\login",
-        "_name": "_d44332f2"
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\login",
+        "_name": "_5f300aa2"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\login",
-        "_name": "_d44332f2"
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\login",
+        "_name": "_5f300aa2"
       },
       {
         "path": "/profile/:username",
         "name": "profile",
-        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\profile",
-        "_name": "_7105b147"
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\profile",
+        "_name": "_2f7adb6f"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\settings",
-        "_name": "_40f08845"
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\settings",
+        "_name": "_5120a31d"
       },
       {
         "path": "/editor",
         "name": "editor",
-        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\editor",
-        "_name": "_19628e0f"
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\editor",
+        "_name": "_300b7ee7"
       },
       {
         "path": "/article/:slug",
         "name": "article",
-        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\fed-e-task-03-03\\\\code\\\\04-realworld-nuxtjs\\\\pages\\\\article",
-        "_name": "_57cff494"
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\realworld\\\\pages\\\\article",
+        "_name": "_16451ebc"
       }
     ],
-    "_name": "_19aa079e"
+    "_name": "_5a22c074"
   }
 ]
