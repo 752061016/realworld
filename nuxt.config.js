@@ -42,7 +42,7 @@ module.exports = {
                 }
             )
         },
-        base: './',
+        // base: './',
         linkActiveClass: 'active'
     },
     // 注册插件
