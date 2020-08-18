@@ -104,7 +104,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/_nuxt/";
+/******/ 	__webpack_require__.p = "./_nuxt/";
 /******/
 /******/ 	// uncaught error handler for webpack runtime
 /******/ 	__webpack_require__.oe = function(err) {
@@ -283,7 +283,9 @@ module.exports = require("vue-no-ssr");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 // 基于 axios 封装的请求模块
- // 创建请求对象
+ // import {routerOptions} from '@/router'
+// console.log(routerOptions)
+// 创建请求对象
 
 const request = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: 'https://conduit.productionready.io/'
@@ -291,7 +293,8 @@ const request = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
 // 插件导出函数必须作为 default 成员
 
 /* harmony default export */ __webpack_exports__["a"] = (({
-  store
+  store,
+  redirect
 }) => {
   // 请求拦截器
   // 任何请求都要经过请求拦截器
@@ -301,7 +304,12 @@ const request = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
     // 修改请求头
     const {
       user
-    } = store.state;
+    } = store.state; // 接口参数带 isLogin 但用户未登录会跳转到登录页面
+
+    if (!user && config.isLogin) {
+      redirect('/login');
+      return Promise.reject();
+    }
 
     if (user && user.token) {
       config.headers.Authorization = `Token ${user.token}`;
@@ -313,6 +321,15 @@ const request = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
     // 如果请求失败，此时请求还没有发出去，就会进入这里
     return Promise.reject(error);
   }); // 响应拦截器
+  // request.interceptors.response.use(function (config) {
+  //     return config
+  // }, function (error) {
+  //     console.log(error)
+  //     if (error.response && error.response.status === 401) {
+  //         redirect('/login')
+  //     }
+  //     return Promise.reject(error)
+  // })
   // export default request
 });
 
@@ -692,6 +709,10 @@ const state = () => {
 const mutations = {
   setUser(state, data) {
     state.user = data;
+  },
+
+  logout(state) {
+    state.user = null;
   }
 
 };
@@ -901,7 +922,7 @@ async function setContext(app, context) {
       store: app.store,
       payload: context.payload,
       error: context.error,
-      base: '/',
+      base: './',
       env: {}
     }; // Only set once
 
@@ -1526,19 +1547,19 @@ if (false) {}
 
 
 
-const _19aa079e = () => interopDefault(__webpack_require__.e(/* import() */ 4).then(__webpack_require__.bind(null, 31)));
+const _19aa079e = () => interopDefault(__webpack_require__.e(/* import() */ 7).then(__webpack_require__.bind(null, 31)));
 
-const _2e1e2201 = () => interopDefault(__webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 29)));
+const _2e1e2201 = () => interopDefault(__webpack_require__.e(/* import() */ 4).then(__webpack_require__.bind(null, 30)));
 
-const _d44332f2 = () => interopDefault(__webpack_require__.e(/* import() */ 5).then(__webpack_require__.bind(null, 30)));
+const _d44332f2 = () => interopDefault(__webpack_require__.e(/* import() */ 5).then(__webpack_require__.bind(null, 32)));
 
-const _7105b147 = () => interopDefault(__webpack_require__.e(/* import() */ 6).then(__webpack_require__.bind(null, 32)));
+const _7105b147 = () => interopDefault(__webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 33)));
 
-const _40f08845 = () => interopDefault(__webpack_require__.e(/* import() */ 7).then(__webpack_require__.bind(null, 33)));
+const _40f08845 = () => interopDefault(__webpack_require__.e(/* import() */ 6).then(__webpack_require__.bind(null, 34)));
 
-const _19628e0f = () => interopDefault(__webpack_require__.e(/* import() */ 3).then(__webpack_require__.bind(null, 34)));
+const _19628e0f = () => interopDefault(__webpack_require__.e(/* import() */ 3).then(__webpack_require__.bind(null, 35)));
 
-const _57cff494 = () => interopDefault(__webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 28))); // TODO: remove in Nuxt 3
+const _57cff494 = () => interopDefault(__webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 29))); // TODO: remove in Nuxt 3
 
 
 const emptyFn = () => {};
@@ -1552,7 +1573,7 @@ external_vue_router_default.a.prototype.push = function push(location, onComplet
 external_vue_default.a.use(external_vue_router_default.a);
 const routerOptions = {
   mode: 'history',
-  base: decodeURI('/'),
+  base: decodeURI('./'),
   linkActiveClass: 'active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior: router_scrollBehavior,
@@ -2634,7 +2655,7 @@ const createNext = ssrContext => opts => {
 
   opts.query = Object(external_querystring_["stringify"])(opts.query);
   opts.path = opts.path + (opts.query ? '?' + opts.query : '');
-  const routerBase = '/';
+  const routerBase = './';
 
   if (!opts.path.startsWith('http') && routerBase !== '/' && !opts.path.startsWith(routerBase)) {
     opts.path = server_urlJoin(routerBase, opts.path);

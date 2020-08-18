@@ -13,6 +13,9 @@ export const state = () => {
 export const mutations = {
     setUser (state, data) {
         state.user = data
+    },
+    logout (state) {
+        state.user = null
     }
 }
 

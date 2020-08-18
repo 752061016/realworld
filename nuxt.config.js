@@ -42,6 +42,7 @@ module.exports = {
                 }
             )
         },
+        base: './',
         linkActiveClass: 'active'
     },
     // 注册插件

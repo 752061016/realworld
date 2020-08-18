@@ -94,6 +94,13 @@
             <h1>{{ article.title }}</h1>
             <p>{{ article.description }}</p>
             <span>Read more...</span>
+            <ul class="tag-list">
+              <li 
+                class="tag-default tag-pill tag-outline ng-binding ng-scope"
+                v-for="tag in article.tagList" :key="tag">
+                {{ tag }}
+              </li>
+            </ul>
           </nuxt-link>
         </div>
 
@@ -170,7 +177,7 @@ export default {
     watchQuery: ['page', 'tag', 'tab'],
     async asyncData ({ query }) {
       const page = Number.parseInt(query.page || 1)
-      const limit = 2
+      const limit = 20
       const tab = query.tab || 'global_feed'
       const tag = query.tag || ''
       const loadArticles = tab === 'global_feed' ? getArticles : getYourFeedArticles

@@ -16,6 +16,20 @@
     <div class="row article-content">
       <div class="col-md-12" v-html="article.body">
       </div>
+      <!-- 标签显示 -->
+      <ul class="tag-list">
+        <nuxt-link v-for="tag in article.tagList" :key="tag" :to="{
+          name: 'home',
+          query: {
+            tag,
+            tab: 'tag'
+          }
+        }">
+          <li class="tag-default tag-pill tag-outline ng-binding ng-scope" ng-repeat="tag in ::$ctrl.article.tagList" >
+            {{ tag }}
+          </li>
+        </nuxt-link>
+      </ul>
     </div>
 
     <hr />
@@ -48,7 +62,6 @@ export default {
       const { article } = data
       const md = new MarkdownIt()
       article.body = md.render(article.body)
-      console.log(article)
       return {
         article
       }
