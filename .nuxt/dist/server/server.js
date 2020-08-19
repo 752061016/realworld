@@ -104,7 +104,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./_nuxt/";
+/******/ 	__webpack_require__.p = "/_nuxt/";
 /******/
 /******/ 	// uncaught error handler for webpack runtime
 /******/ 	__webpack_require__.oe = function(err) {
@@ -922,7 +922,7 @@ async function setContext(app, context) {
       store: app.store,
       payload: context.payload,
       error: context.error,
-      base: './',
+      base: '/',
       env: {}
     }; // Only set once
 
@@ -1573,7 +1573,7 @@ external_vue_router_default.a.prototype.push = function push(location, onComplet
 external_vue_default.a.use(external_vue_router_default.a);
 const routerOptions = {
   mode: 'history',
-  base: decodeURI('./'),
+  base: decodeURI('/'),
   linkActiveClass: 'active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior: router_scrollBehavior,
@@ -2655,7 +2655,7 @@ const createNext = ssrContext => opts => {
 
   opts.query = Object(external_querystring_["stringify"])(opts.query);
   opts.path = opts.path + (opts.query ? '?' + opts.query : '');
-  const routerBase = './';
+  const routerBase = '/';
 
   if (!opts.path.startsWith('http') && routerBase !== '/' && !opts.path.startsWith(routerBase)) {
     opts.path = server_urlJoin(routerBase, opts.path);

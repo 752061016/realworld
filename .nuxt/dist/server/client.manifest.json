@@ -1,5 +1,5 @@
 {
-  "publicPath": "./_nuxt/",
+  "publicPath": "/_nuxt/",
   "all": [
     "../server/index.spa.html",
     "../server/index.ssr.html",
@@ -12,14 +12,14 @@
     "8.948340e.js",
     "9.6b632b1.js",
     "LICENSES",
-    "app.584552c.js",
+    "app.0a015a3.js",
     "node_modules/commons.e74019a.js",
-    "runtime.4276757.js"
+    "runtime.97e2c93.js"
   ],
   "initial": [
-    "runtime.4276757.js",
+    "runtime.97e2c93.js",
     "node_modules/commons.e74019a.js",
-    "app.584552c.js"
+    "app.0a015a3.js"
   ],
   "async": [
     "10.14dba73.js",
@@ -1029,13 +1029,13 @@
       "9.6b632b1.js"
     ],
     "1a3ae26b": [
-      "app.584552c.js"
+      "app.0a015a3.js"
     ],
     "dabc93ce": [
       "node_modules/commons.e74019a.js"
     ],
     "6fca0322": [
-      "runtime.4276757.js"
+      "runtime.97e2c93.js"
     ]
   }
 }
